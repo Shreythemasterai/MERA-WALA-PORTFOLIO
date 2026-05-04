@@ -1,4 +1,5 @@
-/* Base Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,64 +7,22 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Background & Main Colors */
 body {
-    background: linear-gradient(135deg, #1a1a2e, #4a192c, #5c4033);
+    /* Rich Dark Background with Pink/Brown undertones */
+    background: linear-gradient(135deg, #121212, #2d0b16, #3d2b1f);
     background-attachment: fixed;
-    color: #fffaf0; /* Warm white */
+    color: #fff;
     overflow-x: hidden;
 }
 
 /* Pinkish Yellow Text Gradient */
-.pink-yellow-text {
-    background: linear-gradient(to right, #ff9a9e, #fad0c4, #f6d365);
+.title-gradient {
+    background: linear-gradient(90deg, #ff85a1, #f6d365);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-/* Glassmorphism Effect */
-.glass-card {
-    background: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 235, 205, 0.2);
-    border-radius: 25px;
-    padding: 40px;
-    width: 100%;
-    max-width: 550px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    transition: 0.4s;
-}
-
-.glass-card:hover {
-    transform: scale(1.03);
-    border-color: #f6d365;
-    box-shadow: 0 0 20px rgba(246, 211, 101, 0.3);
-}
-
-.glass-card p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: #ffe4e1; /* Misty Rose for text */
-}
-
-/* Zigzag Layout */
-.zigzag-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-    width: 100%;
-}
-
-.zigzag-row.right {
-    text-align: right;
-}
-
-.spacer {
-    flex: 1;
+    font-weight: 800;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
 }
 
 /* Navigation */
@@ -71,19 +30,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
-    background: rgba(26, 26, 46, 0.8);
+    padding: 20px 10%;
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255, 133, 161, 0.3);
 }
 
 .logo {
-    font-size: 1.6rem;
-    font-weight: 900;
     color: #f6d365;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 nav ul {
@@ -92,50 +51,101 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #ff9a9e;
+    color: #ff85a1;
     font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f6d365;
 }
 
 /* Hero Section */
 .hero {
-    height: 40vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 60px 20px;
+}
+
+.hero-card {
     text-align: center;
+    width: 100%;
+    max-width: 800px;
+    border: 2px solid #f6d365 !important;
 }
 
 .hero h1 {
     font-size: 3rem;
-    background: linear-gradient(to bottom, #f6d365, #ff9a9e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    color: #f6d365;
+}
+
+/* Zigzag Layout using Grid */
+.zigzag-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 10%;
+}
+
+.card-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.card-wrapper.left {
+    justify-content: flex-start;
+}
+
+.card-wrapper.right {
+    justify-content: flex-end;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 40px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff85a1;
+}
+
+.glass-card p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #fce7f3; /* Soft pinkish white */
+    font-weight: 300;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 50px;
-    background: rgba(0, 0, 0, 0.3);
+    padding: 60px;
     color: #f6d365;
+    font-size: 0.9rem;
 }
 
-/* Responsive */
+/* Mobile Fix */
 @media (max-width: 768px) {
-    .zigzag-row {
-        flex-direction: column;
-        text-align: center !important;
+    .card-wrapper.right, .card-wrapper.left {
+        justify-content: center;
     }
-    .spacer {
-        display: none;
-    }
-    .glass-card {
-        max-width: 90%;
+    .hero h1 {
+        font-size: 2rem;
     }
 }
