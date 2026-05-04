@@ -1,56 +1,78 @@
+/* Base Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Background & Main Colors */
 body {
-    background: linear-gradient(135deg, #0f172a, #312e81, #0d9488);
+    background: linear-gradient(135deg, #1a1a2e, #4a192c, #5c4033);
     background-attachment: fixed;
-    color: #f8fafc;
-    line-height: 1.7;
+    color: #fffaf0; /* Warm white */
+    overflow-x: hidden;
 }
 
+/* Pinkish Yellow Text Gradient */
+.pink-yellow-text {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4, #f6d365);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Glassmorphism Effect */
 .glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 30px;
-    margin-bottom: 15px; /* Added for line spacing */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.glass-card p {
-    margin-bottom: 10px; /* Ensures each sentence in the box is on a new line */
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 235, 205, 0.2);
+    border-radius: 25px;
+    padding: 40px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: 0.4s;
 }
 
 .glass-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(45, 212, 191, 0.5);
+    transform: scale(1.03);
+    border-color: #f6d365;
+    box-shadow: 0 0 20px rgba(246, 211, 101, 0.3);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
+.glass-card p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #ffe4e1; /* Misty Rose for text */
 }
 
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+/* Zigzag Layout */
+.zigzag-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
+.zigzag-row.right {
+    text-align: right;
+}
+
+.spacer {
+    flex: 1;
+}
+
+/* Navigation */
 .glass-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    background: rgba(15, 23, 42, 0.6);
+    padding: 20px 8%;
+    background: rgba(26, 26, 46, 0.8);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
@@ -58,9 +80,10 @@ body {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #2dd4bf;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #f6d365;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 nav ul {
@@ -69,51 +92,50 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 30px;
+    margin-left: 25px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #e2e8f0;
-    transition: 0.3s;
+    color: #ff9a9e;
+    font-weight: 600;
 }
 
-nav ul li a:hover {
-    color: #2dd4bf;
-}
-
+/* Hero Section */
 .hero {
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
-    padding: 20px;
     text-align: center;
 }
 
-.section-title {
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    text-align: center;
-    color: #2dd4bf;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.hero h1 {
+    font-size: 3rem;
+    background: linear-gradient(to bottom, #f6d365, #ff9a9e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 5px;
 }
 
-.skill-box h3 {
-    color: #818cf8;
-    margin-bottom: 15px;
-}
-
-.project-icon {
-    font-size: 2.5rem;
-    color: #2dd4bf;
-    margin-bottom: 20px;
-}
-
+/* Footer */
 footer {
     text-align: center;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.4);
-    color: #94a3b8;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #f6d365;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .zigzag-row {
+        flex-direction: column;
+        text-align: center !important;
+    }
+    .spacer {
+        display: none;
+    }
+    .glass-card {
+        max-width: 90%;
+    }
 }
