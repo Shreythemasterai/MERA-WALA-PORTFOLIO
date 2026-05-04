@@ -9,13 +9,13 @@
 }
 
 body {
-    background: linear-gradient(135deg, #0f0f1a, #2d0b16, #3d2b1f);
+    /* Reverted to Purplish-Indigo Gradient */
+    background: linear-gradient(135deg, #0f172a, #312e81, #581c87);
     background-attachment: fixed;
     color: #ffffff;
     overflow-x: hidden;
 }
 
-/* Pinkish Yellow Text Gradient */
 .title-gradient {
     background: linear-gradient(90deg, #ff85a1, #f6d365);
     -webkit-background-clip: text;
@@ -25,13 +25,12 @@ body {
     margin-bottom: 20px;
 }
 
-/* Navigation */
 .glass-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 10%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(15px);
     position: sticky;
     top: 0;
@@ -55,7 +54,6 @@ nav ul li a {
 }
 nav ul li a:hover { color: #f6d365; }
 
-/* Hero Section */
 .hero { display: flex; justify-content: center; padding: 80px 20px; }
 .hero-card { 
     text-align: center; 
@@ -64,7 +62,6 @@ nav ul li a:hover { color: #f6d365; }
 }
 .hero h1 { font-size: 3rem; color: #f6d365; margin-bottom: 10px; }
 
-/* Zigzag Grid */
 .zigzag-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -76,7 +73,6 @@ nav ul li a:hover { color: #f6d365; }
 .card-wrapper.left { justify-content: flex-start; }
 .card-wrapper.right { justify-content: flex-end; }
 
-/* Glassmorphism Cards */
 .glass-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
@@ -91,7 +87,7 @@ nav ul li a:hover { color: #f6d365; }
 .glass-card:hover {
     transform: translateY(-10px);
     border-color: #ff85a1;
-    box-shadow: 0 0 25px rgba(255, 133, 161, 0.2);
+    box-shadow: 0 0 25px rgba(255, 133, 161, 0.3);
 }
 
 .glass-card p {
@@ -100,12 +96,13 @@ nav ul li a:hover { color: #f6d365; }
     color: #fce7f3;
 }
 
-/* Contact Section */
 .contact-section {
     text-align: center;
     padding: 100px 10%;
 }
 .contact-card { margin: 0 auto; max-width: 700px; }
+.contact-card p { font-size: 1.2rem; font-weight: 600; }
+
 .social-links { margin-top: 30px; }
 .social-links a {
     color: #f6d365;
@@ -122,10 +119,8 @@ footer {
     text-align: center;
     padding: 60px;
     color: #f6d365;
-    background: rgba(0,0,0,0.4);
 }
 
-/* Mobile Adjustments */
 @media (max-width: 850px) {
     .card-wrapper.left, .card-wrapper.right { justify-content: center; }
     .hero h1 { font-size: 2rem; }
