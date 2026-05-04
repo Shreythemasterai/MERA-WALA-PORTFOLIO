@@ -9,7 +9,6 @@
 }
 
 body {
-    /* Background using your requested image */
     background: linear-gradient(rgba(10, 10, 30, 0.7), rgba(10, 10, 30, 0.7)), 
                 url('f4d83c4a-fbb6-4008-8b5d-d30eba771326.jpg');
     background-size: cover;
@@ -19,7 +18,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Glassmorphism Navigation */
 .glass-nav {
     display: flex;
     justify-content: space-between;
@@ -40,7 +38,6 @@ nav ul li { margin-left: 25px; }
 nav ul li a { text-decoration: none; color: #ffffff; font-weight: 600; transition: 0.3s; }
 nav ul li a:hover { color: #c5a059; }
 
-/* Text Gradients */
 .title-gradient {
     background: linear-gradient(90deg, #c5a059, #8da399);
     -webkit-background-clip: text;
@@ -49,7 +46,6 @@ nav ul li a:hover { color: #c5a059; }
     margin-bottom: 20px;
 }
 
-/* Zigzag Grid Layout */
 .zigzag-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -61,7 +57,6 @@ nav ul li a:hover { color: #c5a059; }
 .card-wrapper.left { justify-content: flex-start; }
 .card-wrapper.right { justify-content: flex-end; }
 
-/* Glass Cards - Enhanced for readability against geometric bg */
 .glass-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(25px);
@@ -80,7 +75,6 @@ nav ul li a:hover { color: #c5a059; }
     background: rgba(255, 255, 255, 0.08);
 }
 
-/* Skills Badges */
 .skills-badge-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
 .badge {
     background: rgba(197, 160, 89, 0.15);
@@ -92,11 +86,9 @@ nav ul li a:hover { color: #c5a059; }
     font-weight: 600;
 }
 
-/* Hero Section */
 .hero { display: flex; justify-content: center; padding: 100px 20px; }
 .hero h1 { font-size: 3.5rem; color: #c5a059; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
 
-/* Contact & Footer */
 .contact-section { text-align: center; padding: 100px 10%; }
 .social-links a { color: #ffffff; font-size: 2.5rem; margin: 0 20px; transition: 0.3s; }
 .social-links a:hover { color: #c5a059; transform: translateY(-5px); }
