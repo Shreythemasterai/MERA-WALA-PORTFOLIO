@@ -9,15 +9,12 @@
 </head>
 <body>
 
-    <!-- The Background Overlay is handled in CSS -->
-    <div class="bg-overlay"></div>
-
     <nav class="glass-nav">
         <div class="logo">✨ SHREYASH DUBEY</div>
         <ul>
             <li><a href="#about">Profile</a></li>
             <li><a href="#academics">Education</a></li>
-            <li><a href="#projects">Research</a></li>
+            <li><a href="#lab">Lab</a></li>
             <li><a href="#contact">Connect</a></li>
         </ul>
     </nav>
@@ -31,6 +28,8 @@
     </header>
 
     <main class="zigzag-grid">
+        
+        <!-- SECTION 1: PROFILE -->
         <div class="card-wrapper left">
             <div class="glass-card">
                 <h2 class="title-gradient">📂 <i class="fa-solid fa-user-tie"></i> Professional Profile</h2>
@@ -40,6 +39,39 @@
             </div>
         </div>
 
+        <!-- SECTION 2: TECH STACK (NEW) -->
+        <div class="card-wrapper right">
+            <div class="glass-card">
+                <h2 class="title-gradient"><i class="fa-solid fa-layer-group"></i> My Tech Stack</h2>
+                <p>🛠️ I am building a versatile toolkit for modern engineering:</p>
+                <div class="skills-badge-container">
+                    <span class="badge">Python</span>
+                    <span class="badge">C Programming</span>
+                    <span class="badge">HTML5/CSS3</span>
+                    <span class="badge">Arduino</span>
+                    <span class="badge">Prompt Eng.</span>
+                    <span class="badge">LangChain</span>
+                    <span class="badge">Matplotlib</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: PROMPT LAB (NEW) -->
+        <div id="lab" class="card-wrapper left">
+            <div class="glass-card prompt-lab">
+                <h2 class="title-gradient"><i class="fa-solid fa-wand-sparkles"></i> Prompt Lab (PR-31)</h2>
+                <div class="prompt-box">
+                    <p style="color: #ff85a1; font-weight: bold;">❌ Basic Input:</p>
+                    <p style="font-style: italic; font-size: 0.9rem;">"Explain recursion."</p>
+                </div>
+                <div class="prompt-box engineered">
+                    <p style="color: #f6d365; font-weight: bold;">✅ Engineered Output:</p>
+                    <p style="font-size: 0.9rem;">"Act as a Senior Developer. Explain recursion using a Matryoshka doll analogy, including base case logic and stack depth constraints."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: ACADEMICS -->
         <div class="card-wrapper right">
             <div class="glass-card">
                 <h2 class="title-gradient"><i class="fa-solid fa-medal"></i> Academic Milestones</h2>
@@ -49,16 +81,8 @@
             </div>
         </div>
 
-        <div class="card-wrapper left">
-            <div class="glass-card">
-                <h2 class="title-gradient">💻 <i class="fa-solid fa-terminal"></i> Technical Skills</h2>
-                <p>🌐 Web Architecture: Fundamental mastery of HTML5.</p>
-                <p>🏗️ Core Logic: Proficient in C Programming fundamentals.</p>
-                <p>🐍 Data Scripting: Completed basic Python programming certification.</p>
-            </div>
-        </div>
-
-        <div id="projects" class="card-wrapper right">
+        <!-- SECTION 5: RESEARCH & PROJECTS -->
+        <div id="projects" class="card-wrapper left">
             <div class="glass-card">
                 <h2 class="title-gradient"><i class="fa-solid fa-microchip"></i> Engineering Projects</h2>
                 <p>🚦 Automated Transit: Engineered an Arduino-based Automatic Toll Gate system.</p>
@@ -67,14 +91,6 @@
             </div>
         </div>
 
-        <div class="card-wrapper left">
-            <div class="glass-card">
-                <h2 class="title-gradient">🎨 <i class="fa-solid fa-palette"></i> Creative Interests</h2>
-                <p>🏏 Sports: I am an avid enthusiast of the sport of Cricket.</p>
-                <p>🖌️ Art: I enjoy the precision and creativity of sketching and drawing.</p>
-                <p>✨ Passionate about the intersection of technology and visual art.</p>
-            </div>
-        </div>
     </main>
 
     <section id="contact" class="contact-section">
@@ -83,9 +99,7 @@
             <p><i class="fa-solid fa-phone" style="color: #f6d365;"></i> +91 9028843967</p>
             <p><i class="fa-solid fa-envelope" style="color: #ff85a1;"></i> shreyashdubey2007@gmail.com</p>
             <div class="social-links">
-                <a href="https://www.instagram.com/shreyashdubey2007?igsh=MWhmMjA2ZjNibnJ4MQ==" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
+                <a href="https://www.instagram.com/shreyashdubey2007?igsh=MWhmMjA2ZjNibnJ4MQ==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#"><i class="fa-brands fa-github"></i></a>
             </div>
@@ -93,8 +107,18 @@
     </section>
 
     <footer>
-        <p>✨ Crafted for Excellence | Shreyash Dubey 2026 ✨</p>
+        <p>✨ Shreyash Dubey | 2026 ✨</p>
+        <p id="live-clock" style="font-size: 0.8rem; margin-top: 10px; color: #ff85a1;"></p>
     </footer>
 
+    <script>
+        // Real-time Clock Script
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('live-clock').innerText = now.toLocaleString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
 </body>
 </html>
