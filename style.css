@@ -9,8 +9,7 @@
 }
 
 body {
-    /* Majestic Scenery Image with a Purple Overlay fallback */
-    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(88, 28, 135, 0.8)), 
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(88, 28, 135, 0.85)), 
                 url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070');
     background-size: cover;
     background-position: center;
@@ -19,62 +18,57 @@ body {
     overflow-x: hidden;
 }
 
-/* Glassmorphism Navigation */
-.glass-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(15px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(246, 211, 101, 0.3);
-}
-
-.logo {
-    color: #f6d365;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-nav ul { display: flex; list-style: none; }
-nav ul li { margin-left: 25px; }
-nav ul li a {
-    text-decoration: none;
-    color: #ff85a1;
-    font-weight: 600;
-    transition: 0.3s;
-}
-nav ul li a:hover { color: #f6d365; }
-
-/* Text Gradients */
 .title-gradient {
     background: linear-gradient(90deg, #ff85a1, #f6d365);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
-    font-size: 1.6rem;
-    margin-bottom: 20px;
 }
 
-/* Hero Section */
-.hero { display: flex; justify-content: center; padding: 80px 20px; }
-.hero-card { 
-    text-align: center; 
-    max-width: 800px; 
-    border: 1px solid rgba(246, 211, 101, 0.5) !important; 
-    background: rgba(0, 0, 0, 0.4) !important; /* Darker hero card for readability */
+/* Skills Badges */
+.skills-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
 }
-.hero h1 { font-size: 3.5rem; color: #f6d365; margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
 
-/* Zigzag Grid */
+.badge {
+    background: rgba(246, 211, 101, 0.15);
+    border: 1px solid rgba(246, 211, 101, 0.5);
+    color: #f6d365;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.badge:hover {
+    background: #f6d365;
+    color: #1a1a2e;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(246, 211, 101, 0.4);
+}
+
+/* Prompt Lab Box Styling */
+.prompt-box {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.prompt-box.engineered {
+    border-left: 4px solid #f6d365;
+}
+
+/* Zigzag Layout */
 .zigzag-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 60px;
-    padding: 20px 10%;
+    padding: 40px 10%;
 }
 
 .card-wrapper { display: flex; width: 100%; }
@@ -90,43 +84,41 @@ nav ul li a:hover { color: #f6d365; }
     padding: 40px;
     width: 100%;
     max-width: 580px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-    transition: all 0.4s ease;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    transition: 0.4s;
 }
+
 .glass-card:hover {
     transform: translateY(-10px);
     border-color: #f6d365;
-    background: rgba(255, 255, 255, 0.12);
 }
 
-.glass-card p {
-    margin-bottom: 15px;
-    line-height: 1.8;
-    color: #ffffff;
-    font-weight: 400;
+/* Nav & Footer */
+.glass-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(246, 211, 101, 0.3);
 }
 
-/* Contact Section */
+.logo { color: #f6d365; font-weight: 800; letter-spacing: 2px; }
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 25px; }
+nav ul li a { text-decoration: none; color: #ff85a1; font-weight: 600; }
+
 .contact-section { text-align: center; padding: 100px 10%; }
-.contact-card { margin: 0 auto; max-width: 700px; }
-.social-links { margin-top: 30px; }
-.social-links a {
-    color: #f6d365;
-    font-size: 2.5rem;
-    margin: 0 20px;
-    transition: 0.3s;
-}
+.social-links a { color: #f6d365; font-size: 2.5rem; margin: 0 20px; transition: 0.3s; }
 .social-links a:hover { color: #ff85a1; transform: translateY(-5px); }
 
-footer {
-    text-align: center;
-    padding: 60px;
-    color: #f6d365;
-    font-weight: 300;
-}
+footer { text-align: center; padding: 60px; color: #f6d365; }
 
-/* Responsive Adjustments */
 @media (max-width: 850px) {
     .card-wrapper.left, .card-wrapper.right { justify-content: center; }
-    .hero h1 { font-size: 2.2rem; }
 }
